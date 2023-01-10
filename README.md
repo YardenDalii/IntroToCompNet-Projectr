@@ -1,4 +1,4 @@
-# Intro To Computer Networking Projectr
+# Intro To Computer Networking Project
 
 Authors:
 Yarden Dali - 207220013
