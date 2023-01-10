@@ -1,0 +1,83 @@
+﻿@model WebProject.Models.BookedTicket
+
+@{
+    ViewBag.Title = "Work";
+}
+<link href="~/css/WebsiteLayout.css" rel="stylesheet" />
+<h2>Work</h2>
+
+<div class="transBack">
+    <div>
+        <h2>Person Details</h2>
+        <hr />
+        <div>
+            <dt style="margin-top: 15px">
+                @Html.LabelFor(model => model.Person.Email)
+            </dt>
+            <dt>
+                @Html.DisplayFor(model => model.Person.Email)
+            </dt>
+
+            <dt style="margin-top: 15px">
+                @Html.LabelFor(model => model.Person.FullName)
+            </dt>
+            <dt>
+                @Html.DisplayFor(model => model.Person.FullName)
+            </dt>
+            <dt style="margin-top: 15px">
+                @Html.LabelFor(model => model.Person.id)
+            </dt>
+            <dt>
+                @Html.DisplayFor(model => model.Person.id)
+            </dt>
+        </div>
+    </div>
+
+
+    <div>
+        <h2>Flight Details</h2>
+        <hr />
+        <div>
+            <dt style="margin-top: 15px">
+                @Html.LabelFor(model => model.Flight.From)
+            </dt>
+            <dt>
+                @Html.DisplayFor(model => model.Flight.From)
+            </dt>
+
+            <dt style="margin-top: 15px">
+                @Html.LabelFor(model => model.Flight.To)
+            </dt>
+            <dt>
+                @Html.DisplayFor(model => model.Flight.To)
+            </dt>
+
+            <dt style="margin-top: 15px">
+                @Html.LabelFor(model => model.Flight.ArrTime)
+            </dt>
+            <dt>
+                @Html.DisplayFor(model => model.Flight.ArrTime)
+            </dt>
+
+            <dt style="margin-top: 15px">
+                @Html.LabelFor(model => model.Flight.DepTime)
+            </dt>
+            <dt>
+                @Html.DisplayFor(model => model.Flight.DepTime)
+            </dt>
+
+            <dt style="margin-top: 15px">
+                @Html.LabelFor(model => model.Flight.Price)
+            </dt>
+            <dt>
+                @Html.DisplayFor(model => model.Flight.Price)
+            </dt>
+        </div>
+    </div>
+</div>
+
+<div>
+    <input type="button" value="Back to Homepage" onclick="location.href = '@Url.Action("Index", "Home")'" class="transBtn" />
+</div>
+    
+

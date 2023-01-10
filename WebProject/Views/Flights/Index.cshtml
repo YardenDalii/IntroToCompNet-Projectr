@@ -1,0 +1,71 @@
+﻿@model IEnumerable<WebProject.Models.Flight>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<link href="~/css/WebsiteLayout.css" rel="stylesheet" />
+
+<h2>Flights List</h2>
+
+<p>
+    <input type="button" value="Create New" onclick="location.href = '@Url.Action("Create")'" class="transBtn" />
+</p>
+<table class="table transBack" >
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.From)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.To)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArrTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SeatCap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.From)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.To)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArrTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SeatCap)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price) ₪
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<div>
+    <input type="button" value="Back to Control Panel" onclick="location.href = '@Url.Action("Administration", "Admins")'" class="transBtn" />
+</div>
+

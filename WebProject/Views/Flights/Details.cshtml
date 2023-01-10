@@ -1,0 +1,66 @@
+﻿@model WebProject.Models.Flight
+
+@{
+    ViewBag.Title = "Details";
+}
+<link href="~/css/WebsiteLayout.css" rel="stylesheet" />
+<h2>Details</h2>
+
+<div class="transBack">
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.From)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.From)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.To)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.To)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DepTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DepTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArrTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArrTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SeatCap)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SeatCap)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price) ₪
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <input type="button" value="Edit" onclick="location.href = '@Url.Action("Edit", new { id = Model.ID })'" class="transBtn" /> |
+    <input type="button" value="Back To List" onclick="location.href = '@Url.Action("Index")'" class="transBtn" />
+
+</p>

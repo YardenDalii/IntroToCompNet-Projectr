@@ -1,0 +1,50 @@
+﻿@model IEnumerable<WebProject.Models.CreditCard>
+
+@{
+    ViewBag.Title = "Index";
+}
+<link href="~/css/WebsiteLayout.css" rel="stylesheet" />
+<h2>Index</h2>
+
+<p>
+    <input type="button" value="Create New" onclick="location.href = '@Url.Action("Create")'" class="transBtn" />
+</p>
+<table class="table transBack">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CardNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExpDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CVV)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CardNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExpDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CVV)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
+
+<div>
+    <input type="button" value="Back to Control Panel" onclick="location.href = '@Url.Action("Administration", "Admins")'" class="transBtn" />
+</div>
+

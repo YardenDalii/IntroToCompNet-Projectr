@@ -1,0 +1,67 @@
+﻿@model WebProject.Models.UserB
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>User Details</h2>
+
+<div style="background-color: rgb(212 202 201 / 0.60)">
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.id_number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_number)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PayMethods)
+        </dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Card Number</th>
+                    <th>Exp Date</th>
+                    <th>CVV</th>
+                </tr>
+                @foreach (var item in Model.PayMethods)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CardNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ExpDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CVV)
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <input type="button" value="Edit" onclick="location.href = '@Url.Action("Edit", new {id = Model.ID })'" style="background-color: rgb(15 15 15 / 0.8); border-radius: 20px; color: white; border-color: rgb(192 188 188);" /> |
+    <input type="button" value="Back to List" onclick="location.href = '@Url.Action("Index")'" style="background-color: rgb(15 15 15 / 0.8); border-radius: 20px; color: white; border-color: rgb(192 188 188);" />
+</p>

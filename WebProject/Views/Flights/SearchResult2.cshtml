@@ -1,0 +1,133 @@
+﻿@model WebProject.Models.TwoWayF
+
+@{
+    ViewBag.Title = "SearchResult2";
+}
+<link href="~/css/WebsiteLayout.css" rel="stylesheet" />
+<h2>Flights</h2>
+<form action="BookNow2" method="post">
+    <div>
+        <table class="table transBack">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.f.From)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.f.To)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.f.DepTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.f.ArrTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.f.SeatCap)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.f.Price)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model.FromList)
+            {
+                if (DateTime.Compare(DateTime.Today, item.DepTime) <= 0)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.From)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.To)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DepTime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ArrTime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SeatCap)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Price) ₪
+                        </td>
+                        <td>
+                            @Html.RadioButton("Book1",item.ID)
+                        </td>
+                    </tr>
+                }
+            }
+
+        </table>
+    </div>
+
+    <div>
+        <table class="table transBack">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.f.From)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.f.To)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.f.DepTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.f.ArrTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.f.SeatCap)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.f.Price)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model.ToList)
+            {
+                if (DateTime.Compare(DateTime.Today, item.DepTime) <= 0)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.From)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.To)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DepTime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ArrTime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SeatCap)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Price) ₪
+                        </td>
+                        <td>
+                            @Html.RadioButton("Book2",item.ID)
+                        </td>
+                    </tr>
+                }
+            }
+
+        </table>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Book Now" class="transBtn" />
+        </div>
+    </div>
+</form>
+
+<div>
+    <input type="button" value="Back to Search" onclick="location.href = '@Url.Action("FlightSearch", "Flights")'" class="transBtn" />
+</div>
+

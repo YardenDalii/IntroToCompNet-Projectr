@@ -1,0 +1,71 @@
+﻿@model IEnumerable<WebProject.Models.Flight>
+
+@{
+    ViewBag.Title = "SearchResult";
+}
+
+<link href="~/css/WebsiteLayout.css" rel="stylesheet" />
+<h2>Book a flight!</h2>
+
+
+<table class="table transBack">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.From)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.To)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArrTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SeatCap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (DateTime.Compare(DateTime.Today, item.DepTime) <= 0)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.From)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.To)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DepTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ArrTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SeatCap)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price) ₪
+                </td>
+                <td>
+                    @Html.ActionLink("Book Now", "BookNow1", new { id = item.ID })
+                </td>
+            </tr>
+        }
+    }
+
+</table>
+
+<div>
+    <input type="button" value="Back to Search" onclick="location.href = '@Url.Action("FlightSearch", "Flights")'" class="transBtn" />
+</div>
+
+
+

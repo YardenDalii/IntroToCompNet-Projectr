@@ -1,0 +1,125 @@
+﻿@model WebProject.Models.BookedTicket2
+
+@{
+    ViewBag.Title = "Work";
+}
+<link href="~/css/WebsiteLayout.css" rel="stylesheet" />
+<h2>Work</h2>
+
+<div class="transBack">
+    <div>
+        <h2>Person Details</h2>
+        <hr />
+        <div>
+            <dt style="margin-top: 15px">
+                @Html.LabelFor(model => model.Person.Email)
+            </dt>
+            <dt>
+                @Html.DisplayFor(model => model.Person.Email)
+            </dt>
+
+            <dt style="margin-top: 15px">
+                @Html.LabelFor(model => model.Person.FullName)
+            </dt>
+            <dt>
+                @Html.DisplayFor(model => model.Person.FullName)
+            </dt>
+            <dt style="margin-top: 15px">
+                @Html.LabelFor(model => model.Person.id)
+            </dt>
+            <dt>
+                @Html.DisplayFor(model => model.Person.id)
+            </dt>
+        </div>
+    </div>
+
+    <div>
+        <h2>Flights Details</h2>
+        <hr />
+
+        <div>
+            <h3>Outbound</h3>
+            <dt style="margin-top: 15px">
+                @Html.LabelFor(model => model.Flight1.From)
+            </dt>
+            <dt>
+                @Html.DisplayFor(model => model.Flight1.From)
+            </dt>
+
+            <dt style="margin-top: 15px">
+                @Html.LabelFor(model => model.Flight1.To)
+            </dt>
+            <dt>
+                @Html.DisplayFor(model => model.Flight1.To)
+            </dt>
+
+            <dt style="margin-top: 15px">
+                @Html.LabelFor(model => model.Flight1.ArrTime)
+            </dt>
+            <dt>
+                @Html.DisplayFor(model => model.Flight1.ArrTime)
+            </dt>
+
+            <dt style="margin-top: 15px">
+                @Html.LabelFor(model => model.Flight1.DepTime)
+            </dt>
+            <dt>
+                @Html.DisplayFor(model => model.Flight1.DepTime)
+            </dt>
+
+            <dt style="margin-top: 15px">
+                @Html.LabelFor(model => model.Flight1.Price)
+            </dt>
+            <dt>
+                @Html.DisplayFor(model => model.Flight1.Price)
+            </dt>
+        </div>
+        <hr />
+        <div>
+            <h3>Inbound</h3>
+            <dt style="margin-top: 15px">
+                @Html.LabelFor(model => model.Flight2.From)
+            </dt>
+            <dt>
+                @Html.DisplayFor(model => model.Flight2.From)
+            </dt>
+
+            <dt style="margin-top: 15px">
+                @Html.LabelFor(model => model.Flight2.To)
+            </dt>
+            <dt>
+                @Html.DisplayFor(model => model.Flight2.To)
+            </dt>
+
+            <dt style="margin-top: 15px">
+                @Html.LabelFor(model => model.Flight2.ArrTime)
+            </dt>
+            <dt>
+                @Html.DisplayFor(model => model.Flight2.ArrTime)
+            </dt>
+
+            <dt style="margin-top: 15px">
+                @Html.LabelFor(model => model.Flight2.DepTime)
+            </dt>
+            <dt>
+                @Html.DisplayFor(model => model.Flight2.DepTime)
+            </dt>
+
+            <dt style="margin-top: 15px">
+                @Html.LabelFor(model => model.Flight2.Price)
+            </dt>
+            <dt>
+                @Html.DisplayFor(model => model.Flight2.Price)
+            </dt>
+        </div>
+    </div>
+
+
+
+</div>
+
+<div>
+    <input type="button" value="Back to Homepage" onclick="location.href = '@Url.Action("Index", "Home")'" class="transBtn" />
+</div>
+
+

@@ -1,0 +1,41 @@
+﻿@model WebProject.Models.CreditCard
+
+@{
+    ViewBag.Title = "Details";
+}
+<link href="~/css/WebsiteLayout.css" rel="stylesheet" />
+<h2>Details</h2>
+
+<div class="transBack">
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CardNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CardNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExpDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExpDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CVV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CVV)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <input type="button" value="Edit" onclick="location.href = '@Url.Action("Edit")'" class="transBtn" /> | 
+    <input type="button" value="Back to Lisst" onclick="location.href = '@Url.Action("Index")'" class="transBtn" />
+</p>

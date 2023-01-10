@@ -1,0 +1,72 @@
+﻿@model WebProject.Models.Flight
+
+@{
+    ViewBag.Title = "Delete";
+}
+<link href="~/css/WebsiteLayout.css" rel="stylesheet" />
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div class="transBack">
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.From)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.From)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.To)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.To)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DepTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DepTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArrTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArrTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SeatCap)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SeatCap)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+<div class="form-actions no-color">
+    <input type="submit" value="Delete" class="transBtn" />  |
+    <input type="button" value="Back To List" onclick="location.href = '@Url.Action("Index")'" class="transBtn" />
+</div>
+    }
+</div>
